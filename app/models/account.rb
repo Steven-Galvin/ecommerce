@@ -1,3 +1,3 @@
-class Account < ApplicationRecord
-  has_one :user
-end
+# class Account < ApplicationRecord
+#   has_one :user
+# end
