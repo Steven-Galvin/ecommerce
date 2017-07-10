@@ -1,16 +1,64 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- */
- // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
- @import "bootstrap-sprockets";
- @import "bootstrap";
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.my-nav {
+  width: 100%;
+  margin-top: 2em;
+  padding-bottom: 3em;
+  border-bottom: solid 1px #333;
+  padding-right: 30px;
+  padding-left: 20px;
+}
+.my-nav ul {
+  list-style: none;
+  padding: 0;
+}
+.my-nav ul li {
+  display: inline-block;
+  float: right;
+  font-size: 1.5em;
+  margin-left: 3em;
+}
+
+ul {
+  list-style: none;
+  text-decoration: none;
+}
+
+ .my-nav h1 ul li a {
+  color: #333;
+  text-decoration: none;
+ }
+
+ a {
+  color: #333;
+  text-decoration: none;
+ }
+
+ a:hover {
+  text-decoration: none;
+  color: #333;
+
+}
+
+.form-group label {
+  display: block;
+  }
+
+input, textarea {
+  padding: 0.5em;
+ }
+
+body {
+  padding-bottom: 200px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.main {
+  padding-top: 20px;
+}
+
+p {
+  font-size: 18px;
+}

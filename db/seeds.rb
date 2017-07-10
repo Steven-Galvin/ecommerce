@@ -1,5 +1,15 @@
 Order.destroy_all
 
+
+
+
+user = User.new
+user.email = "james@gmail.com"
+user.password = '123456'
+user.admin = true
+user.save!
+
+
 5.times do |index|
   Order.create!(status: "pending",
                         account_id: Faker::Number.between(1, 5),
@@ -18,8 +28,8 @@ end
 
 p "Created #{Product.count} Products"
 
-
-OrderItem.destroy_all
+#
+# OrderItem.destroy_all
 
 # 100.times do |index|
 #   OrderItem.create!(quantity: Faker::Number.between(1, 10),
