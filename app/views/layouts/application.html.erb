@@ -15,9 +15,11 @@
         <% if current_user %>
           <li> <%= link_to "Sign out", destroy_user_session_path, method: 'delete' %></li>
           <li><%= link_to "Cart",  cart_path %>
-              <%# if @order_items.any? %>
-                 <%# @order_items.length %>
-              <%# end %></li>
+              <% if current_order %>
+                 <%= current_order.order_items.length %>
+                 <% else %>
+                 0
+              <% end %></li>
 
             <li> <%= link_to "View All Products",  products_path %></li>
             <% if current_user.try(:admin?) %>
