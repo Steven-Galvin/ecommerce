@@ -2,12 +2,12 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
     @order_item = current_order.order_items.new
-    # best_seller_object = Bestseller.new
-    # @bestseller = best_seller_object.get_bestseller_list
+
    end
 
   def new
     @product = Product.new
+    @order_items = current_order.order_items
   end
 
   def create
@@ -34,6 +34,11 @@ class ProductsController < ApplicationController
 #     render :edit
 #   end
 # end
+
+def show
+  @order_items = current_order.order_items
+end
+
 
 def destroy
   @product = Product.find(params[:id])

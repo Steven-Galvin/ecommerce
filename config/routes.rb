@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   root to: 'products#index'
 
-
+  resources :charges
   resources :order_items
   resource :cart, only: [:show]
   resources :books
