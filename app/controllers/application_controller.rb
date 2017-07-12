@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  helper_method :current_order
+  helper_method :current_order, :show_total_items
   # before_action :get_order_number
 
 
@@ -8,6 +8,15 @@ class ApplicationController < ActionController::Base
   #   current_order.order_items.length
   #   return 1
   # end
+
+  def show_total_items
+    @order_items = current_order.order_items
+    quantity_array = []
+    @order_items.each do |item|
+      quantity_array.push(item.quantity)
+    end
+    @total_items = quantity_array.sum
+  end
 
   def show
     @order_items = current_order.order_items

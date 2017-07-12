@@ -14,12 +14,9 @@
       <ul>
         <% if current_user %>
           <li> <%= link_to "Sign out", destroy_user_session_path, method: 'delete' %></li>
-          <li><%= link_to "Cart",  cart_path %>
-              <% if current_order %>
-                 <%= current_order.order_items.length %>
-                 <% else %>
-                 0
-              <% end %></li>
+          <li><%= link_to cart_path do %>
+              Cart (<%= show_total_items %>)
+            <% end %></li>
 
             <li> <%= link_to "View All Products",  products_path %></li>
             <% if current_user.try(:admin?) %>
