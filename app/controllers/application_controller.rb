@@ -10,12 +10,14 @@ class ApplicationController < ActionController::Base
   # end
 
   def show_total_items
-    @order_items = current_order.order_items
-    quantity_array = []
-    @order_items.each do |item|
-      quantity_array.push(item.quantity)
+    if current_order
+      @order_items = current_order.order_items
+      quantity_array = []
+      @order_items.each do |item|
+        quantity_array.push(item.quantity)
+      end
+      @total_items = quantity_array.sum
     end
-    @total_items = quantity_array.sum
   end
 
   def show

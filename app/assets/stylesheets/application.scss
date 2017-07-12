@@ -2,6 +2,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+#new-product {
+  border: 1px solid black;
+  padding: 10px;
+}
+
 .my-nav {
   width: 100%;
   margin-top: 2em;
