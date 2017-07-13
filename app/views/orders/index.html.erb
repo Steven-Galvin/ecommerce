@@ -1,0 +1,13 @@
+<h1>Your orders</h1>
+
+<%  @orders.each do |order| %>
+<div class="order">
+  <%= order.created_at %><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% order.order_items.each do |item| %>
+    <div class="item">
+      <%= item.product.name %><br>
+      <%= item.quantity %>
+    </div>
+  <% end %>
+</div>
+<% end %>

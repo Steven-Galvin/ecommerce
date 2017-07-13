@@ -2,13 +2,15 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
-    @order_item = current_order.order_items.new
-    @order_items = current_order.order_items
-    quantity_array = []
-    @order_items.each do |item|
-      quantity_array.push(item.quantity)
+    if current_user
+      @order_item = current_order.order_items.new
+      @order_items = current_order.order_items
+      quantity_array = []
+      @order_items.each do |item|
+        quantity_array.push(item.quantity)
+      end
+      @total_items = quantity_array.sum
     end
-    @total_items = quantity_array.sum
    end
 
   def new
@@ -21,7 +23,7 @@ class ProductsController < ApplicationController
     if @product.save
       flash[:notice] = "Product successfully added!"
       respond_to do |format|
-        format.html  
+        format.html
         format.js { redirect_to products_path }
       end
     else

@@ -1,23 +1,19 @@
-Order.destroy_all
-User.destroy_all
+# Order.destroy_all
+# User.destroy_all
+#
+# user = User.new
+# user.email = "james@gmail.com"
+# user.password = '123456'
+# user.admin = true
+# user.save!
 
-
-
-
-user = User.new
-user.email = "james@gmail.com"
-user.password = '123456'
-user.admin = true
-user.save!
-
-
-5.times do |index|
-  Order.create!(status: "pending",
-                        account_id: Faker::Number.between(1, 5),
-                        total_price: Faker::Number.between(1, 5))
-end
-
-p "Created #{Order.count} Orders"
+# 5.times do |index|
+#   Order.create!(status: "pending",
+#                         user_id: 1,
+#                         total_price: Faker::Number.between(1, 5))
+# end
+#
+# p "Created #{Order.count} Orders"
 
 Product.destroy_all
 
